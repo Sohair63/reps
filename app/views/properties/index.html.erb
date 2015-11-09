@@ -1,17 +1,19 @@
 <div class="row-fluid">
-  <%- model_class = Property -%>
   <div class="page-header">
-    <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+    <h3>Real Estate</h3>
   </div>
+
+  <%= paginate @properties %>
+
   <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
       <tr>
-        <th><%= model_class.human_attribute_name(:title) %></th>
-        <th><%= model_class.human_attribute_name(:address) %></th>
-        <th><%= model_class.human_attribute_name(:property_type) %></th>
-        <th><%= model_class.human_attribute_name(:status) %></th>
-        <th><%= model_class.human_attribute_name(:area) %></th>
-        <th><%= model_class.human_attribute_name(:price) %></th>
+        <th><%= sortable 'title', 'Title' %></th>
+        <th><%= sortable 'address', 'Adress' %></th>
+        <th><%= sortable 'property_type', 'Type' %></th>
+        <th><%= sortable 'status', 'Status' %></th>
+        <th><%= sortable 'area', 'Area' %></th>
+        <th><%= sortable 'price', 'Price' %></th>
         <th>&nbsp;</th>
       </tr>
     </thead>

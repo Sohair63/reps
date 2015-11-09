@@ -1,7 +1,9 @@
 class PropertiesController < ApplicationController
 
   def index
-    @properties = Property.all
+    properties = Property.page(params[:page])
+    sort_direction
+    @properties = sorted properties
 
     respond_to do |format|
       format.html
