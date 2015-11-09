@@ -3,41 +3,29 @@
   <div class="page-header">
     <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
   </div>
-  <table class="table table-striped">
+  <table class="table table-striped table-bordered table-hover table-condensed">
     <thead>
       <tr>
-        <th><%= model_class.human_attribute_name(:id) %></th>
         <th><%= model_class.human_attribute_name(:title) %></th>
         <th><%= model_class.human_attribute_name(:address) %></th>
         <th><%= model_class.human_attribute_name(:property_type) %></th>
         <th><%= model_class.human_attribute_name(:status) %></th>
-        <th><%= model_class.human_attribute_name(:overview) %></th>
         <th><%= model_class.human_attribute_name(:area) %></th>
         <th><%= model_class.human_attribute_name(:price) %></th>
-        <th><%= model_class.human_attribute_name(:created_at) %></th>
-        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+        <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       <% @properties.each do |property| %>
         <tr>
-          <td><%= link_to property.id, property_path(property) %></td>
           <td><%= property.title %></td>
           <td><%= property.address %></td>
           <td><%= property.property_type %></td>
           <td><%= property.status %></td>
-          <td><%= property.overview %></td>
           <td><%= property.area %></td>
           <td><%= property.price %></td>
-          <td><%=l property.created_at %></td>
           <td>
-            <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                        edit_property_path(property), :class => 'btn btn-mini' %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        property_path(property),
-                        :method => :delete,
-                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                        :class => 'btn btn-mini btn-danger' %>
+            <%= link_to property do %><i class="icon-eye-open"></i><% end %>
           </td>
         </tr>
       <% end %>
