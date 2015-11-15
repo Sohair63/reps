@@ -19,6 +19,5 @@ group :production do
   gem 'pg'
 end
 
-gem 'jquery-rails', '2.3.0'
+gem 'jquery-rails'
 gem 'kaminari'
-gem 'activeadmin'
