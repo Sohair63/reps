@@ -9,11 +9,11 @@ class Property < ActiveRecord::Base
   validates :title,         presence: true
 
   validates :status,        presence: true,
-                            inclusion: { in: %w(sale rent wanted),
+                            inclusion: { in: %w(Sale Rent Wanted),
                             message: "%{value} is not a valid status" },
                             allow_nil: false
   validates :property_type, presence: true,
-                            inclusion: { in: %w(homes plot commercial),
+                            inclusion: { in: %w(Homes Plot Commercial),
                             message: "%{value} is not a valid property type" },
                             allow_nil: false
 end
