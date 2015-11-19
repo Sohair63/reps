@@ -10,10 +10,11 @@
     <thead>
       <tr>
         <th><%= sortable 'title', 'Title' %></th>
-        <th><%= sortable 'address', 'Adress' %></th>
-        <th><%= sortable 'property_type', 'Type' %></th>
-        <th><%= sortable 'status', 'Status' %></th>
+        <th><%= sortable 'city', 'City' %></th>
+        <th><%= sortable 'property_type', 'Property Type' %></th>
+        <th><%= sortable 'status', 'Purpose' %></th>
         <th><%= sortable 'area', 'Area' %></th>
+        <th><%= sortable 'area_unit', 'Unit' %></th>
         <th><%= sortable 'price', 'Price' %></th>
         <th>&nbsp;</th>
       </tr>
@@ -22,10 +23,11 @@
       <% @properties.each do |property| %>
         <tr>
           <td><%= property.title %></td>
-          <td><%= property.address %></td>
+          <td><%= property.city %></td>
           <td><%= property.property_type %></td>
           <td><%= property.status %></td>
           <td><%= property.area %></td>
+          <td><%= property.area_unit %></td>
           <td><%= property.price %></td>
           <td>
             <%= link_to property do %><i class="icon-eye-open"></i><% end %>
