@@ -3,21 +3,60 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @property.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
-  <dd><%= @property.city %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:property_type) %>:</strong></dt>
-  <dd><%= @property.property_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @property.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:overview) %>:</strong></dt>
-  <dd><%= @property.overview %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:area) %>:</strong></dt>
-  <dd><%= @property.area %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:area_unit) %>:</strong></dt>
-  <dd><%= @property.area_unit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @property.price %></dd>
-</dl>
+<table class="table table-bordered">
+  <tr>
+    <td class="label-width">
+      <strong>Property Title</strong>
+    </td>
+    <td>
+      <%= @property.title %>
+    </td>
+  </tr>
+  <tr>
+    <td class="label-width">
+      <strong>City</strong>
+    </td>
+    <td>
+      <%= @property.city %>
+    </td>
+    <tr>
+    <td class="label-width">
+      <strong>Property Type</strong>
+    </td>
+    <td>
+      <%= @property.property_type %>
+    </td>
+  </tr>
+  <tr>
+    <td class="label-width">
+      <strong>Purpose</strong>
+    </td>
+    <td>
+      <%= @property.status %>
+    </td>
+  </tr>
+  <tr>
+    <td class="label-width">
+      <strong>Overview</strong>
+    </td>
+    <td>
+      <%= @property.overview %>
+    </td>
+  </tr>
+  <tr>
+    <td class="label-width">
+      <strong>Area</strong>
+    </td>
+    <td>
+      <%= [@property.area, @property.area_unit.titleize].join(' ') %>
+    </td>
+  </tr>
+  <tr>
+    <td class="label-width">
+      <strong>Price/ Demand</strong>
+    </td>
+    <td>
+      <%= @property.price %>
+    </td>
+  </tr>
+</table>
