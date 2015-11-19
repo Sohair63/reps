@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151115174712) do
+ActiveRecord::Schema.define(:version => 20151119052946) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20151115174712) do
 
   create_table "properties", :force => true do |t|
     t.string   "title",                                      :null => false
-    t.string   "address",                                    :null => false
+    t.string   "city",                                       :null => false
     t.string   "property_type", :limit => 30,                :null => false
     t.string   "status",        :limit => 30,                :null => false
     t.text     "overview"
@@ -56,9 +56,11 @@ ActiveRecord::Schema.define(:version => 20151115174712) do
     t.integer  "price",                       :default => 0
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
+    t.string   "area_unit"
   end
 
-  add_index "properties", ["address"], :name => "index_properties_on_address"
+  add_index "properties", ["area_unit"], :name => "index_properties_on_area_unit"
+  add_index "properties", ["city"], :name => "index_properties_on_address"
   add_index "properties", ["property_type"], :name => "index_properties_on_property_type"
   add_index "properties", ["status", "property_type"], :name => "index_properties_on_status_and_property_type"
 
