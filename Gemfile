@@ -17,6 +17,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'puma'
 end
 
 gem 'jquery-rails', '2.3.0'
